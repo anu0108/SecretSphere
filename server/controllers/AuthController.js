@@ -93,3 +93,31 @@ module.exports.Login = async (req, res) => {
     });
   }
 };
+
+module.exports.Logout = (req, res) => {
+  //clearing cookie
+  const cookieValue = req.cookies;
+  console.log(req.cookies);
+  if (cookieValue) {
+    res.cookie("token", "", {
+      maxAge: 0,
+      withCredentials: true,
+      httpOnly: false,
+      secure: true,
+      sameSite: "none",
+    });
+    res.cookie("userID", "", {
+      maxAge: 0,
+      withCredentials: true,
+      httpOnly: false,
+      secure: true,
+      sameSite: "none",
+    });
+    console.log("try");
+    res.status(200).send("Logged out successfully");
+    res.end();
+  } else {
+    console.log("cookie not found");
+    res.status(400).send("Cookie not found"); // Handle the case where the cookie doesn't exist
+  }
+};

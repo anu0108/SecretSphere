@@ -12,12 +12,18 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3001/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "http://localhost:3001/login",
+        {
+          email,
+          password,
+        },
+        {
+          withCredentials: true,
+        }
+      );
 
-      console.log(response);
+      // console.log(response);
       // const data = await response.json();
 
       if (response.data.status === "ok") {
@@ -59,7 +65,7 @@ const Login = () => {
 
         <button
           type="submit"
-          className="mt-10 py-3 rounded-3xl bg-blue-500 font-medium text-black"
+          className="mt-10 py-3 rounded-3xl bg-blue-500 hover:bg-blue-600 font-medium text-black"
         >
           Log In
         </button>
