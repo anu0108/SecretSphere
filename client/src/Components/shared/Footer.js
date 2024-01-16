@@ -6,9 +6,12 @@ const Footer = () => {
   const navigate = useNavigate();
   const logout = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/logout", {
-        withCredentials: true,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_BASE_URL}/logout`,
+        {
+          withCredentials: true,
+        }
+      );
       if (response.status === 200) {
         // Successfully logged out
         navigate("/login");

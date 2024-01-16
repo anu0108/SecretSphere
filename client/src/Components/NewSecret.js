@@ -13,13 +13,13 @@ const NewSecret = () => {
     const checkIfUserPostedMessage = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3001/check-message",
+          `${process.env.REACT_APP_BASE_URL}/check-message`,
           {
             withCredentials: true,
           }
         );
 
-        console.log(response.data.message);
+        // console.log(response.data.message);
         if (
           response.status === 200 &&
           response.data.message === "User has already posted a message"
@@ -40,7 +40,7 @@ const NewSecret = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/secret",
+        `${process.env.REACT_APP_BASE_URL}/secret`,
         {
           message,
         },

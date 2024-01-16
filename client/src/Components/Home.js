@@ -8,7 +8,9 @@ const Home = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/messages");
+        const response = await axios.get(
+          `${process.env.REACT_APP_BASE_URL}/messages`
+        );
         setMessages(response.data);
         console.log("hi");
       } catch (error) {
