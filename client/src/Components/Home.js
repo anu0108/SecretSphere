@@ -3,7 +3,7 @@ import SecretCard from "./SecretCard";
 import axios from "axios";
 
 const Home = () => {
-  const [messages, setMessages] = useState([]);
+  const [secretMessages, setSecretMessages] = useState([]);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -12,7 +12,7 @@ const Home = () => {
           `${process.env.REACT_APP_BASE_URL}/messages`
         );
         console.log(response.data);
-        setMessages(response.data);
+        setSecretMessages(response.data);
         console.log("hi");
       } catch (error) {
         console.error(error);
@@ -22,14 +22,14 @@ const Home = () => {
     fetchMessages();
   }, []);
 
-  if (!Array.isArray(messages)) {
-    console.error("Messages is not an array:", messages);
+  if (!Array.isArray(secretMessages)) {
+    console.error("Messages is not an array:", secretMessages);
     return null; // or handle the error appropriately
   }
 
   return (
     <div className="px-44 pt-10 grid grid-cols-4 gap-x-3 gap-y-10">
-      {messages.map((msg) => (
+      {secretMessages.map((msg) => (
         <SecretCard key={msg._id} secret={msg.message} />
       ))}
     </div>
