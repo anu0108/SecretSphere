@@ -11,6 +11,7 @@ const Home = () => {
         const response = await axios.get(
           `${process.env.REACT_APP_BASE_URL}/messages`
         );
+        console.log(response.data);
         setMessages(response.data);
         console.log("hi");
       } catch (error) {
@@ -21,12 +22,14 @@ const Home = () => {
     fetchMessages();
   }, []);
 
+  if (!Array.isArray(messages)) {
+    console.error("Messages is not an array:", messages);
+    return null; // or handle the error appropriately
+  }
+
   return (
     <div className="px-44 pt-10 grid grid-cols-4 gap-x-3 gap-y-10">
       {messages.map((msg) => (
-        // <p className="text-white" key={msg._id}>
-        //   {msg.message}
-        // </p>
         <SecretCard key={msg._id} secret={msg.message} />
       ))}
     </div>
