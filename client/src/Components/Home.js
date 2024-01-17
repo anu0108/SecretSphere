@@ -28,9 +28,9 @@ const Home = () => {
   }
 
   return (
-    <div className="px-44 pt-10 grid grid-cols-4 gap-x-3 gap-y-10">
+    <div className=" place-items-center sm:px-20 md:px-6 lg:px-36 pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-4 lg:gap-y-6 xl:gap-y-10 pb-16">
       {secretMessages.map((msg) => (
-        <SecretCard key={msg._id} secret={msg.message} />
+        <SecretCard key={msg._id} secret={msg.message} time={msg.timestamp} />
       ))}
     </div>
   );

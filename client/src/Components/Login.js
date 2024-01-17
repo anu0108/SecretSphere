@@ -39,24 +39,28 @@ const Login = () => {
   };
 
   return (
-    <div className="text-white px-48 pt-16">
-      <p className="text-center text-4xl font-bold">Log in to SecretSphere</p>
-
-      <form onSubmit={handleSubmit} className="flex flex-col px-96 pt-10 gap-1">
+    <div className="text-white px-auto pt-16">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col w-60 sm:w-80 justify-center px-auto mx-auto pt-8 gap-1"
+      >
+        <p className="text-center text-2xl md:text-4xl w-full font-bold mb-6">
+          Log in to SecretSphere
+        </p>
         <label>Email</label>
         <input
           type="email"
           label="Email"
-          className="px-2 py-2 rounded-sm text-black"
+          className="px-2 py-2 w-60 sm:w-80 mx-auto rounded-sm text-black"
           value={email}
           onChange={(event) => {
             setEmail(event.target.value);
           }}
         />
-        <label className="pt-5">Password</label>
+        <label className="">Password</label>
         <input
           type="password"
-          className="px-2 py-2 rounded-sm text-black"
+          className="px-2 py-2 w-60 sm:w-80 mx-auto rounded-sm text-black"
           value={password}
           onChange={(event) => {
             setPassword(event.target.value);
@@ -69,8 +73,6 @@ const Login = () => {
         >
           Log In
         </button>
-
-        <p className="text-center pt-5 underline">Forgot your password?</p>
       </form>
     </div>
   );

@@ -40,31 +40,35 @@ const Register = () => {
   };
 
   return (
-    <div className="text-white px-48 pt-16">
-      <div className="flex-col">
-        <p className="text-center text-4xl font-bold">
-          Sign up to start secreting
-        </p>
-        {/* <p>Ready to Whisper?</p> */}
-      </div>
+    <div className="text-white px-auto pt-16">
+      <div className="flex-col">{/* <p>Ready to Whisper?</p> */}</div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col px-96 pt-10 gap-1">
-        <label>Email</label>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col w-60 sm:w-80 justify-center px-auto mx-auto pt-10 gap-2"
+      >
+        <div className="w-68 sm:w-96">
+          <p className="text-2xl md:text-4xl font-bold w-full">
+            Sign up to start secreting
+          </p>
+        </div>
+
+        <label className="">Email</label>
         <input
           type="email"
           name="email"
           value={email}
-          className="px-2 py-2 rounded-sm text-black"
+          className="px-2 py-2 w-60 sm:w-80 mx-auto rounded-sm text-black"
           onChange={(event) => {
             setEmail(event.target.value);
           }}
         />
-        <label className="pt-5">Password</label>
+        <label className="">Password</label>
         <input
           type="password"
           name="pwd"
           value={password}
-          className="px-2 py-2 rounded-sm text-black"
+          className="px-2 py-2 w-60 sm:w-80 mx-auto rounded-sm text-black"
           onChange={(event) => {
             setPassword(event.target.value);
           }}
@@ -72,16 +76,19 @@ const Register = () => {
 
         <button
           type="submit"
-          className="mt-10 py-3 rounded-3xl bg-blue-500 hover:bg-blue-600 font-medium text-black"
+          className="mt-10 mx-auto w-60 sm:w-80 py-3 rounded-3xl bg-blue-500 hover:bg-blue-600 font-medium text-black"
         >
           Register
         </button>
       </form>
-      <div className="px-96 pt-14 text-gray-500">
+      <div className="mx-auto px-16 sm:px-48 md:px-64 lg:px-96 xl:px-[450px] pt-14 text-gray-500">
         <hr className="" />
-        <div className="flex justify-center pt-2 gap-2">
+        <div className="text-sm sm:text-base flex justify-center pt-2 gap-2">
           <p className="">Already have an account?</p>
-          <Link to="/login" className="text-white underline">
+          <Link
+            to="/login"
+            className="text-sm sm:text-base text-white underline"
+          >
             Log in here
           </Link>
         </div>

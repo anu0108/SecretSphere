@@ -68,70 +68,35 @@ const NewSecret = () => {
     navigate("/");
   };
   return (
-    // <div className="pt-14">
-    //   <div className="mx-auto rounded-t h-16 w-1/3 bg-[#E56399] text-white">
-    //     <p className="text-center text-xl py-4 font-bold">
-    //       Post your Anonymous Secret
-    //     </p>
-    //     <div className="bg-white h-80 rounded-b">
-    //       <form action="" onSubmit={handleSubmit}>
-    //         <div className="px-4 py-3">
-    //           <textarea
-    //             id="secret"
-    //             name="secret"
-    //             value={message}
-    //             className="w-full h-60 border border-gray-500 rounded-md p-2 text-black"
-    //             placeholder="Type your secret here..."
-    //             onChange={(e) => setMessage(e.target.value)}
-    //           ></textarea>
-    //         </div>
-    //         <div className="flex justify-center ">
-    //           <button
-    //             type="submit"
-    //             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
-    //           >
-    //             Submit
-    //           </button>
-    //           <button
-    //             type="button"
-    //             className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded ml-2"
-    //           >
-    //             Cancel
-    //           </button>
-    //         </div>
-    //       </form>
-    //     </div>
-    //   </div>
-    // </div>
     <div className="pt-14">
       {formVisible && (
-        <div className="mx-auto rounded-t h-16 w-1/3 bg-[#E56399] text-white">
-          <p className="text-center text-xl py-4 font-bold">
+        <div className="mx-auto rounded-t h-16 w-1/2 lg:w-1/3 bg-[#E56399] text-white">
+          <p className="text-center text-xs sm:text-base md:text-lg lg:text-xl py-4 font-bold">
             Post your Anonymous Secret
           </p>
-          <div className="bg-white h-80 rounded-b">
+          <div className="bg-white h-56 sm:h-80 rounded-b">
             <form action="" onSubmit={handleSubmit}>
-              <div className="px-4 py-3">
+              <div className="px-4 py-1.5 sm:py-3">
                 <textarea
                   id="secret"
                   name="secret"
                   value={message}
-                  className="w-full h-60 border border-gray-500 rounded-md p-2 text-black"
+                  className="w-full h-44 sm:h-60 border border-gray-500 rounded-md p-2 text-black text-xs sm:text-base"
                   placeholder="Type your secret here..."
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
-              <div className="flex justify-center ">
+              <div className="flex justify-center text-xs sm:text-base">
                 <button
                   type="submit"
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+                  className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 sm:py-2 px-4 rounded mr-2"
                 >
                   Submit
                 </button>
                 <button
                   type="button"
                   onClick={cancel}
-                  className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded ml-2"
+                  className="bg-gray-600 hover:bg-gray-700 text-white font-bold  py-1 sm:py-2 px-4 rounded ml-2"
                 >
                   Cancel
                 </button>

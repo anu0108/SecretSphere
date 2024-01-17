@@ -27,7 +27,10 @@ module.exports.SecretMessage = async (req, res) => {
     const newSecret = new SecretModel({ message, user: userID });
     await newSecret.save();
 
-    res.status(201).json({ message: "Secret saved successfully" });
+    res.status(201).json({
+      message: "Secret saved successfully",
+      timestamp: newSecret.timestamp,
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });

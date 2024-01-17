@@ -24,7 +24,7 @@ const Footer = () => {
     }
   };
   return (
-    <div className="text-white border-t-2 fixed bottom-0 left-0 w-full  p-3">
+    <div className="text-white border-t-2 fixed bottom-0 left-0 w-full bg-slate-900 p-3">
       <div className="mx-auto w-5/6 flex justify-between">
         <div className="">
           <p>Developed by Anurag Wadhwa</p>
