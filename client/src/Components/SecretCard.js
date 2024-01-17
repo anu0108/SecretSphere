@@ -5,7 +5,7 @@ const SecretCard = ({ secret, time }) => {
   const formattedTimestamp = moment(time).fromNow();
 
   return (
-    <div className="bg-blue-500 text-white h-32 lg:h-44 w-60 rounded flex flex-col gap-3 px-1 lg:px-2 py-0.5 lg:py-1">
+    <div className="bg-blue-500 text-white h-36 lg:h-44 w-60 rounded flex flex-col gap-3 px-1 lg:px-2 py-0.5 lg:py-1">
       <p className="text-xs lg:text-sm text-black pt-1">
         Posted {formattedTimestamp}
       </p>
