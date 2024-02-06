@@ -20,9 +20,12 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="sm:flex gap-10 pt-2 text-sm md:text-base hidden">
+      <div className="sm:flex gap-7 pt-2 text-sm md:text-base hidden">
         <Link to="/">
           <p className="">Home</p>
+        </Link>
+        <Link to="/about">
+          <p className="">About</p>
         </Link>
         <Link to="/secret">
           <p className="">Secret</p>
@@ -54,6 +57,9 @@ const Header = () => {
           <div className="flex flex-col justify-center items-center">
             <Link to="/">
               <p className="">Home</p>
+            </Link>
+            <Link to="/about">
+              <p className="">About</p>
             </Link>
             <Link to="/secret">
               <p className="">Secret</p>

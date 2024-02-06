@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -73,6 +73,12 @@ const Login = () => {
         >
           Log In
         </button>
+
+        {/* <Link to="/otp-login">
+          <p className="text-sm sm:text-base text-white underline text-center">
+            Forgot your password?
+          </p>
+        </Link> */}
       </form>
     </div>
   );
